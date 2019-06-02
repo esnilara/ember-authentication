@@ -1,7 +1,11 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-  model() {
-    return this.store.findAll('code');
+  async model() {
+    try {
+     return await this.store.findAll('code');
+    } catch (e) {
+      return [];
+    }
   }
 });
