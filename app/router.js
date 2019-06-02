@@ -7,6 +7,9 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('secrets', {
+    path: '/'
+  });
 });
 
 export default Router;
