@@ -1,1 +1,22 @@
-{{yield}}
+{{link-to "Secret codes" "secrets"}}
+
+<h2>Login Page</h2>
+<p>Use "user" "password"</p>
+
+<form {{action "authenticate" on="submit"}}>
+  <input
+    type="text"
+    placeholder="username"
+    value={{this.username}}
+    oninput={{action (mut this.username) value="target.value"}}>
+
+  <input
+    type="password"
+    value={{this.password}}
+    oninput={{action (mut this.password) value="target.value"}}
+    placeholder="password">
+
+  <button type="submit">
+    Login
+  </button>
+</form>
