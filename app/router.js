@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('secrets', {
     path: '/'
   });
+  this.route('login');
 });
 
 export default Router;
