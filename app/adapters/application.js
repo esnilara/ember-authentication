@@ -1,14 +1,7 @@
 import DS from 'ember-data';
-import { inject as service } from '@ember/service';
-import { computed } from '@ember/object';
+import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
-export default DS.JSONAPIAdapter.extend({
+export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
   namespace: 'api',
-  authManager: service(),
-
-  headers: computed('authManager.accessToken', function() {
-    return {
-      'Authorization': `Bearer ${this.get('authManager.accessToken')}`
-    };
-  })
+  authorizer: 'authorizer:application'
 });
