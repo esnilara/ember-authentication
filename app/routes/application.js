@@ -1,10 +1,4 @@
 import Route from '@ember/routing/route';
+import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 
-export default Route.extend({
-  actions: {
-    error() {
-      this.transitionTo('/login');
-      return false;
-    }
-  }
-});
+export default Route.extend(ApplicationRouteMixin);
